@@ -20,24 +20,29 @@ import {
 
 import {
   LearnMoreLinks,
-  Colors,
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen'
 
-import Header from './components/Header'
+import { Colors } from '../src/styles'
+
+import Header from './components/molecules/header'
+import InfoCard from './components/molecules/infoCard'
 
 declare const global: { HermesInternal: null | {} }
 
+// In simulator: Cmd + D debug menu, Cmd + R reload
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
+      <SafeAreaView style={styles.safeAreaViewTop} />
+      <SafeAreaView style={styles.safeAreaViewBottom}>
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
           <Header />
+
+          <InfoCard name="Email" value="christian_prieto@yahoo.com" />
+
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
               <Text style={styles.footer}>Engine: Hermes</Text>
@@ -78,8 +83,11 @@ const App = () => {
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  safeAreaViewTop: {
+    backgroundColor: Colors.primary,
+  },
+  safeAreaViewBottom: {
+    flex: 1,
   },
   engine: {
     position: 'absolute',
