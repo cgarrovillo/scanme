@@ -1,27 +1,28 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
 
-// Styles
 import { Colors, Fonts } from '../../styles'
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   text: {
     textAlign: 'left',
     color: Colors.dark,
-    fontFamily: Fonts.TTCommonsDemiBold,
-    fontSize: Fonts.sizes.h2,
+    fontFamily: Fonts.Families.TTCommonsDemiBold,
+    fontSize: Fonts.Sizes.h2,
   },
 })
 
 interface H2Props {
   children: string
+  rest?: any
 }
 
-const H2 = ({ children }: H2Props) => {
-  return <Text style={styles.text}>{children}</Text>
+const H2 = ({ children, rest }: H2Props) => {
+  return (
+    <Text style={styles.text} {...rest}>
+      {children}
+    </Text>
+  )
 }
 
 export default H2

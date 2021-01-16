@@ -2,7 +2,6 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
-// Styles
 import { Colors, Borders, Shadows } from '../../styles'
 
 const styles = StyleSheet.create({
@@ -20,10 +19,15 @@ const styles = StyleSheet.create({
 
 interface SmallCardProps {
   children: Element
+  rest?: any
 }
 
-const SmallCard = ({ children }: SmallCardProps) => {
-  return <View style={styles.container}>{children}</View>
+const SmallCard = ({ children, rest }: SmallCardProps) => {
+  return (
+    <View style={styles.container} {...rest}>
+      {children}
+    </View>
+  )
 }
 
 export default SmallCard

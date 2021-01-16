@@ -1,5 +1,4 @@
 import React from 'react'
-import { Text } from 'react-native'
 
 import SmallCard from '../atoms/small.card'
 import H2 from '../atoms/h2.text'

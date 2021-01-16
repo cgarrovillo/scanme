@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, StyleSheet } from 'react-native'
+import { TouchableOpacity, Text, StyleSheet, TextProps } from 'react-native'
 
 import { Colors, Fonts, Shadows } from '../../styles'
 
@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     backgroundColor: 'transparent',
-    color: Colors.white,
+    color: Colors.dark,
     fontFamily: Fonts.Families.TTCommonsDemiBold,
-    fontSize: Fonts.Sizes.h1,
+    fontSize: Fonts.Sizes.p,
     shadowColor: Shadows.text.color,
     shadowOffset: Shadows.text.offset,
     shadowOpacity: Shadows.text.opacity,
@@ -17,17 +17,17 @@ const styles = StyleSheet.create({
   },
 })
 
-interface H1Props {
+interface TextButtonProps extends TextProps {
   children: string
   rest?: any
 }
 
-const H1 = ({ children, rest }: H1Props) => {
+const TextButton = ({ children, rest }: TextButtonProps) => {
   return (
-    <Text style={styles.text} {...rest}>
-      {children}
-    </Text>
+    <TouchableOpacity {...rest}>
+      <Text style={styles.text}>{children}</Text>
+    </TouchableOpacity>
   )
 }
 
-export default H1
+export default TextButton
