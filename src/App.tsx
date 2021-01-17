@@ -9,44 +9,39 @@
  */
 
 import React from 'react'
-import { SafeAreaView, StyleSheet, ScrollView, View, Text } from 'react-native'
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+} from 'react-native'
+
 import {
   LearnMoreLinks,
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen'
-import { LayoutComponent, Navigation } from 'react-native-navigation'
 
-import { Colors } from '../styles'
-import TextButton from '../components/atoms/text.button'
-import Header from '../components/molecules/header'
-import InfoCard from '../components/molecules/infoCard'
+import { Colors } from '../src/styles'
 
-import ManageScreen from './ManageScreen'
+import Header from './components/molecules/header'
+import InfoCard from './components/molecules/infoCard'
 
 declare const global: { HermesInternal: null | {} }
 
-interface HomeScreenProps {
-  componentId: string
-}
-
-const HomeScreen = ({ componentId }: HomeScreenProps) => {
-  const goToManage = () => {
-    Navigation.push(componentId, {
-      component: ManageScreen.component,
-    })
-  }
-
+// In simulator: Cmd + D debug menu, Cmd + R reload
+const App = () => {
   return (
     <>
+      <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.safeAreaViewTop} />
       <SafeAreaView style={styles.safeAreaViewBottom}>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <Header />
 
           <InfoCard name="Email" value="christian_prieto@yahoo.com" />
-
-          <TextButton onPress={goToManage}>Manage</TextButton>
 
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
@@ -129,16 +124,4 @@ const styles = StyleSheet.create({
   },
 })
 
-// React Navigation
-const component: LayoutComponent = {
-  name: 'dev.christiang.scanme.HomeScreen',
-  options: {
-    topBar: {
-      background: {
-        color: Colors.primary,
-      },
-    },
-  },
-}
-HomeScreen.component = component
-export default HomeScreen
+export default App

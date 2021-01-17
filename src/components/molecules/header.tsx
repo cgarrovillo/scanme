@@ -2,8 +2,11 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
+// Styles
 import { Colors, Borders } from '../../styles'
-import H1 from '../atoms/h1.text'
+
+// Components
+import { LogoBig } from './logo'
 
 const styles = StyleSheet.create({
   container: {
@@ -17,14 +20,10 @@ const styles = StyleSheet.create({
   },
 })
 
-interface HeaderProps {
-  children?: string
-}
-
-const Header = ({ children = 'Scan.me' }: HeaderProps) => {
+const Header = () => {
   return (
     <View style={styles.container}>
-      <H1>{children}</H1>
+      <LogoBig />
     </View>
   )
 }
