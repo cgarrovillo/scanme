@@ -1,27 +1,28 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
 
-// Styles
 import { Colors, Fonts } from '../../styles'
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   text: {
     textAlign: 'left',
     color: Colors.dark,
-    fontFamily: Fonts.TTCommonsRegular,
-    fontSize: Fonts.sizes.p,
+    fontFamily: Fonts.Families.TTCommonsRegular,
+    fontSize: Fonts.Sizes.p,
   },
 })
 
 interface PProps {
   children: string
+  rest?: any
 }
 
-const P = ({ children }: PProps) => {
-  return <Text style={styles.text}>{children}</Text>
+const P = ({ children, rest }: PProps) => {
+  return (
+    <Text style={styles.text} {...rest}>
+      {children}
+    </Text>
+  )
 }
 
 export default P
