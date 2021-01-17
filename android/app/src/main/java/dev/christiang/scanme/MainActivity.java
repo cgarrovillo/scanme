@@ -1,4 +1,4 @@
-package com.scanme;
+package dev.christiang.scanme;
 
 import com.facebook.react.ReactActivity;
 
