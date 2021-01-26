@@ -22,12 +22,3 @@ target 'scanme' do
     flipper_post_install(installer)
   end
 end
-
-target 'scanme-tvOS' do
-  # Pods for scanme-tvOS
-
-  target 'scanme-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
