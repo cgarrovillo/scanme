@@ -1,9 +1,9 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text, StyleSheet } from 'react-native'
 
 import SmallCard from '../atoms/small.card'
-import H2 from '../atoms/h2.text'
-import P from '../atoms/p.text'
+
+import { Colors, Fonts } from '../../styles'
 
 interface InfoCardProps {
   name: string
@@ -13,10 +13,21 @@ interface InfoCardProps {
 const InfoCard = ({ name, value }: InfoCardProps) => {
   return (
     <SmallCard>
-      <H2>{name}</H2>
-      <P>{value}</P>
+      <Text style={styles.h2}>{name}</Text>
+      <Text style={styles.p}>{value}</Text>
     </SmallCard>
   )
 }
+
+const styles = StyleSheet.create({
+  h2: {
+    ...Fonts.h2,
+    color: Colors.dark,
+  },
+  p: {
+    ...Fonts.p,
+    color: Colors.dark,
+  },
+})
 
 export default InfoCard

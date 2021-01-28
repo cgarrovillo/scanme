@@ -10,13 +10,14 @@
 
 import React from 'react'
 import {
-  SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
   Text,
   StatusBar,
+  SafeAreaView,
 } from 'react-native'
+import { StackNavigationProp } from '@react-navigation/stack'
 
 import {
   LearnMoreLinks,
@@ -29,17 +30,24 @@ import { Colors } from '../styles'
 import Header from '../components/molecules/header'
 import InfoCard from '../components/molecules/infoCard'
 import TextButton from '../components/atoms/text.button'
+import { RootStackParams } from '../App'
 
 declare const global: { HermesInternal: null | {} }
 
 // In simulator: Cmd + D debug menu, Cmd + R reload
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }: Props) => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={Colors.primary}
+        translucent
+      />
       <SafeAreaView style={styles.safeAreaViewTop} />
       <SafeAreaView style={styles.safeAreaViewBottom}>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
           <Header />
 
           <InfoCard name="Email" value="christian_prieto@yahoo.com" />
@@ -92,7 +100,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
   },
   safeAreaViewBottom: {
-    flex: 1,
+    backgroundColor: Colors.lighter,
+  },
+  scrollView: {
+    backgroundColor: Colors.lighter,
   },
   engine: {
     position: 'absolute',
@@ -128,5 +139,10 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 })
+
+export type HomeScreenProp = StackNavigationProp<RootStackParams, 'Home'>
+type Props = {
+  navigation: HomeScreenProp
+}
 
 export default HomeScreen

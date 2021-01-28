@@ -1,10 +1,8 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
-import { Colors, Borders } from '../../styles'
-
-import H1 from '../atoms/h1.text'
+import { Colors, Borders, Fonts } from '../../styles'
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +12,9 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: Borders.radius.roundest,
   },
   text: {
+    ...Fonts.h1,
     color: Colors.white,
+    textAlign: 'center',
   },
 })
 
@@ -25,7 +25,7 @@ interface Props {
 const Header: React.FC<Props> = ({ children = 'Scan.me' }) => {
   return (
     <View style={styles.container}>
-      <H1>{children}</H1>
+      <Text style={styles.text}>{children}</Text>
     </View>
   )
 }
