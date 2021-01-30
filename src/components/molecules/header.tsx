@@ -2,10 +2,11 @@ import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
-import { Colors, Borders, Fonts } from '../../styles'
+import { Colors, Borders, Fonts, Shadows } from '../../styles'
 
 const styles = StyleSheet.create({
   container: {
+    ...Shadows.primary,
     backgroundColor: Colors.primary,
     paddingVertical: hp('12%'),
     borderBottomLeftRadius: Borders.radius.roundest,
@@ -13,6 +14,7 @@ const styles = StyleSheet.create({
   },
   text: {
     ...Fonts.h1,
+    ...Shadows.text,
     color: Colors.white,
     textAlign: 'center',
   },

@@ -1,19 +1,31 @@
-export const primary = {
-  color: '#000',
-  offset: {
-    width: 0,
-    height: 4,
-  },
-  opacity: 0.15,
-  radius: 8,
+import { ShadowStyleIOS, ViewStyle } from 'react-native'
+
+interface Shadow extends ShadowStyleIOS, ViewStyle {
+  shadowColor: string
+  shadowOffset: { width: number; height: number }
+  shadowOpacity: number
+  shadowRadius: number
+  elevation: number
 }
 
-export const text = {
-  color: '#000',
-  offset: {
+export const primary: Shadow = {
+  shadowColor: '#000',
+  shadowOffset: {
     width: 0,
     height: 4,
   },
-  opacity: 0.25,
-  radius: 27,
+  shadowOpacity: 0.15,
+  shadowRadius: 8,
+  elevation: 10,
+}
+
+export const text: Shadow = {
+  shadowColor: '#000',
+  shadowOffset: {
+    width: 0,
+    height: 4,
+  },
+  shadowOpacity: 0.25,
+  shadowRadius: 27,
+  elevation: 5,
 }

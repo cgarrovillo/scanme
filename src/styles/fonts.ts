@@ -6,6 +6,7 @@ export const TTCommonsRegular = 'TTCommons-Regular'
 export const TTCommonsBold = 'TTCommons-Bold'
 export const TTCommonsLight = 'TTCommons-Light'
 export const TTCommonsDemiBold = 'TTCommons-DemiBold'
+export const InterSemiBold = 'Inter-SemiBold'
 
 export const sizes = {
   h1: wp('11%'),
@@ -14,13 +15,10 @@ export const sizes = {
 }
 
 export const h1: TextStyle = {
+  ...Shadows.primary,
   fontFamily: TTCommonsDemiBold,
   fontSize: sizes.h1,
   backgroundColor: 'transparent',
-  shadowColor: Shadows.text.color,
-  shadowOffset: Shadows.text.offset,
-  shadowOpacity: Shadows.text.opacity,
-  shadowRadius: Shadows.text.radius,
 }
 
 export const h2: TextStyle = {
@@ -32,4 +30,9 @@ export const h2: TextStyle = {
 export const p: TextStyle = {
   fontFamily: TTCommonsRegular,
   fontSize: sizes.p,
+}
+
+export const ios: TextStyle = {
+  fontFamily: InterSemiBold,
+  letterSpacing: -1.75,
 }

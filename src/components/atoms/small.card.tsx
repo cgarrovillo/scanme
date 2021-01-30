@@ -7,14 +7,11 @@ import { Colors, Borders, Shadows } from '../../styles'
 
 const styles = StyleSheet.create({
   container: {
-    margin: hp('3%'),
+    ...Shadows.primary,
+    margin: hp('4%'),
     padding: hp('3%'),
     borderRadius: Borders.radius.round,
     backgroundColor: Colors.white,
-    shadowColor: Shadows.primary.color,
-    shadowOffset: Shadows.primary.offset,
-    shadowOpacity: Shadows.primary.opacity,
-    shadowRadius: Shadows.primary.radius,
   },
 })
 
