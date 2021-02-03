@@ -10,7 +10,8 @@ export const InterSemiBold = 'Inter-SemiBold'
 
 export const sizes = {
   h1: wp('11%'),
-  h2: wp('7%'),
+  h2: wp('9%'),
+  h3: wp('7%'),
   p: wp('5%'),
 }
 
@@ -24,6 +25,12 @@ export const h1: TextStyle = {
 export const h2: TextStyle = {
   fontFamily: TTCommonsDemiBold,
   fontSize: sizes.h2,
+  backgroundColor: 'transparent',
+}
+
+export const h3: TextStyle = {
+  fontFamily: TTCommonsDemiBold,
+  fontSize: sizes.h3,
   backgroundColor: 'transparent',
 }
 

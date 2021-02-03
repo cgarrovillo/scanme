@@ -13,15 +13,15 @@ interface InfoCardProps {
 const InfoCard = ({ name, value }: InfoCardProps) => {
   return (
     <SmallCard>
-      <Text style={styles.h2}>{name}</Text>
+      <Text style={styles.h3}>{name}</Text>
       <Text style={styles.p}>{value}</Text>
     </SmallCard>
   )
 }
 
 const styles = StyleSheet.create({
-  h2: {
-    ...Fonts.h2,
+  h3: {
+    ...Fonts.h3,
     color: Colors.dark,
   },
   p: {

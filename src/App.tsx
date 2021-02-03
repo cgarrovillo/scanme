@@ -12,6 +12,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import HomeScreen from './screens/HomeScreen'
 import ManageScreen from './screens/ManageScreen'
 import PassToScreen from './screens/PassToScreen'
+import BarcodeScreen from './screens/BarcodeScreen'
 
 declare const global: { HermesInternal: null | {} }
 
@@ -19,6 +20,7 @@ export type RootStackParams = {
   Home: undefined
   Manage: undefined
   PassTo: undefined
+  Barcode: undefined
 }
 
 const Stack = createStackNavigator<RootStackParams>()
@@ -27,10 +29,11 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator headerMode="none" initialRouteName="PassTo">
+        <Stack.Navigator headerMode="none" initialRouteName="Barcode">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Manage" component={ManageScreen} />
           <Stack.Screen name="PassTo" component={PassToScreen} />
+          <Stack.Screen name="Barcode" component={BarcodeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
