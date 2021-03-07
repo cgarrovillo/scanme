@@ -6,15 +6,12 @@ import {
   StatusBar,
   View,
   Text,
+  Dimensions,
 } from 'react-native'
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen'
 import Barcode from 'react-native-barcode-svg'
 
 import { Borders, Colors, Fonts, Shadows } from '../styles'
-import InfoCard from '../components/molecules/infoCard'
+// import InfoCard from '../components/molecules/infoCard'
 
 const BarcodeScreen = () => {
   return (
@@ -23,11 +20,13 @@ const BarcodeScreen = () => {
       <SafeAreaView style={styles.safeAreaViewTop} />
       <SafeAreaView style={styles.safeAreaViewBottom}>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <View style={styles.topContainer}>
+          <View style={styles.leftContainer}>
             <View style={styles.topTextContainer}>
-              <Text style={styles.topText}>Scan this for my email</Text>
+              <Text style={[styles.topText, styles.rotate]}>
+                Scan this for my email
+              </Text>
             </View>
-            <View style={styles.barcodeContainer}>
+            <View style={[styles.barcodeContainer, styles.rotate]}>
               <Barcode
                 value="me@christiang.dev"
                 format="CODE128B"
@@ -41,6 +40,8 @@ const BarcodeScreen = () => {
   )
 }
 
+const height = Dimensions.get('window').height
+
 const styles = StyleSheet.create({
   safeAreaViewTop: {
     backgroundColor: Colors.white,
@@ -49,15 +50,18 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     flex: 1,
   },
-  topContainer: {
+  rotate: {
+    transform: [{ rotate: '90deg' }],
+  },
+  leftContainer: {
     ...Shadows.primary,
     backgroundColor: Colors.white,
-    paddingVertical: hp('11%'),
-    borderBottomLeftRadius: Borders.radius.roundest,
     borderBottomRightRadius: Borders.radius.roundest,
+    borderBottomLeftRadius: Borders.radius.roundest,
+    flexDirection: 'row',
   },
   topTextContainer: {
-    paddingHorizontal: wp('20%'),
+    height: height - height * 0.4,
   },
   topText: {
     ...Fonts.ios,
