@@ -11,7 +11,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import HomeScreen from './screens/HomeScreen'
 import ManageScreen from './screens/ManageScreen'
-import PassToScreen from './screens/PassToScreen'
+import RotateDeviceScreen from './screens/RotateDeviceScreen'
 import BarcodeScreen from './screens/BarcodeScreen'
 
 declare const global: { HermesInternal: null | {} }
@@ -29,10 +29,10 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator headerMode="none" initialRouteName="Barcode">
+        <Stack.Navigator headerMode="none" initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Manage" component={ManageScreen} />
-          <Stack.Screen name="PassTo" component={PassToScreen} />
+          <Stack.Screen name="PassTo" component={RotateDeviceScreen} />
           <Stack.Screen name="Barcode" component={BarcodeScreen} />
         </Stack.Navigator>
       </NavigationContainer>

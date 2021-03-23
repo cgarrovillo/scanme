@@ -4,14 +4,12 @@ import SystemFontText from '../components/atoms/systemFont.text'
 
 import { Colors, Fonts } from '../styles'
 
-const PassToScreen = () => {
+const RotateDeviceScreen = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden />
       <SafeAreaView style={styles.safeAreaViewBottom}>
-        <SystemFontText style={styles.text}>
-          Pass device to {'\n'} retailer
-        </SystemFontText>
+        <SystemFontText style={styles.text}>Rotate your device</SystemFontText>
       </SafeAreaView>
     </>
   )
@@ -31,4 +29,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default PassToScreen
+export default RotateDeviceScreen
